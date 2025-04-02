@@ -14,6 +14,10 @@ This application provides a web interface to store, organize, and use LLM (Large
 *   **Responsive UI:** Interface adapts to different screen sizes using TailwindCSS.
 *   **RESTful API:** Backend provides a clean API for managing data.
 
+![CleanShot 2025-04-02 at 13 55 10](https://github.com/user-attachments/assets/0a85f1d6-23c8-4c4a-9621-2a2adcbe9ccf)
+![CleanShot 2025-04-02 at 13 54 50](https://github.com/user-attachments/assets/45edaae7-78d3-4e39-af92-15eff47a3b12)
+
+
 ## Tech Stack
 
 *   **Frontend:**
