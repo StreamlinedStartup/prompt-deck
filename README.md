@@ -2,6 +2,8 @@
 
 This application provides a web interface to store, organize, and use LLM (Large Language Model) prompts with support for variable substitution. It's built using React (TypeScript, TailwindCSS) for the frontend and Node.js (Express, MongoDB) for the backend.
 
+# Warning - I am not a developer so will be limited in my ability to help you - this was created with Gemini 2.5 Pro. 
+
 ## Features
 
 *   **Prompt Management:** Create, Read, Update, Delete (CRUD) prompts.
@@ -35,15 +37,6 @@ This application provides a web interface to store, organize, and use LLM (Large
     *   `concurrently` (to run frontend and backend together)
     *   `nodemon` (for backend auto-reloading)
     *   ESLint
-
-## Project Structure
-
-prompt-library/
-├── client/ # React Frontend (Vite)
-├── server/ # Node.js Backend (Express)
-├── .gitignore
-├── package.json # Root package for concurrent execution
-└── README.md
 
 ## Prerequisites
 
