@@ -1,0 +1,40 @@
+version: '3.8' # Use a recent version
+
+services:
+  backend:
+    build:
+      context: ./server # Path to the backend directory
+      dockerfile: Dockerfile
+    container_name: prompt_library_backend
+    restart: unless-stopped
+    environment:
+      # Ensure PORT matches the one exposed/used in server/Dockerfile & server code
+      - PORT=5032 # Use PORT from .env, default to 5032 if not set
+      - MONGODB_URI=mongodb+srv://<username>:<password>@<your_cluster_url/?retryWrites=true&w=majority&appName=yourappname>
+
+      # CLIENT_URL might need adjustment depending on your final deployment URL
+      # For container-to-container, it's often not needed, but depends on CORS setup
+      - CLIENT_URL=http://localhost:8082 # Example, adjust as needed - should match frontend port.
+    networks:
+      - prompt-net
+    ports: 
+      - "5032:5032"
+
+  # Frontend Service (React App served by Nginx)
+  frontend:
+    build:
+      context: ./client # Path to the frontend directory
+      dockerfile: Dockerfile
+    container_name: prompt_library_frontend
+    restart: unless-stopped
+    networks:
+      - prompt-net
+    depends_on:
+      - backend
+    ports:
+      - "8082:80"
+
+# Define the network
+networks:
+  prompt-net:
+    driver: bridge # Default network driver
